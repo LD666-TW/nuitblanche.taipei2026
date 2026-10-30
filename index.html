@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026 白晝之夜｜個人行程表 · NIGHT KA SHI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lato:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #000000;
+      --ink: #f7f4fb;
+      --muted: #cfc6de;
+      --purple: #9170c5;
+      --purple-deep: #4d396e;
+      --line: rgba(145, 112, 197, 0.5);
+      --card: #120c1c;
+    }
+    * { box-sizing: border-box; }
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(145,112,197,0.2), transparent 32%),
+        radial-gradient(circle at 88% 78%, rgba(77,57,110,0.32), transparent 36%),
+        var(--black);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      font-synthesis: none; /* 避免瀏覽器把細字強行加粗而黏筆 */
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px 22px 72px;
+    }
+    .eyebrow {
+      color: var(--purple);
+      font-family: Lato, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    h1 {
+      font-family: "Dela Gothic One", "Noto Sans TC", sans-serif;
+      font-size: clamp(36px, 7vw, 56px);
+      font-weight: 400; /* 顯示字本身已夠厚，勿再 bold */
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+      margin: 0 0 12px;
+      color: #fff;
+      text-shadow: none;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 400;
+      max-width: 40em;
+      margin: 0 0 24px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      font-family: Lato, "Noto Sans TC", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      padding: 8px 14px;
+      background: #000;
+    }
+    .pill strong {
+      color: var(--purple);
+      font-weight: 500;
+      font-family: Lato, sans-serif;
+    }
+    .note {
+      border-left: 3px solid var(--purple);
+      background: rgba(145,112,197,0.1);
+      padding: 14px 16px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .note a { color: #b89ae0; }
+    .map-block { margin: 0 0 36px; }
+    .map-block h2,
+    .section-head h2 {
+      font-family: "Noto Sans TC", sans-serif;
+      font-size: clamp(20px, 3.5vw, 24px);
+      font-weight: 500; /* 中文標題用 Medium，避免 700 黏筆 */
+      margin: 0;
+      letter-spacing: 0.04em;
+      color: #fff;
+    }
+    .map-caption {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 10px 0 12px;
+      font-weight: 400;
+    }
+    .map-caption a { color: #b89ae0; }
+    .map-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 12px;
+    }
+    .btn {
+      display: inline-block;
+      border: 1px solid #fff;
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 10px 18px;
+      background: transparent;
+    }
+    .btn-primary {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: #000;
+    }
+    .map-frame {
+      position: relative;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 16 / 9;
+      min-height: 360px;
+    }
+    .map-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    section { margin: 0 0 28px; }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .time-tag {
+      color: var(--purple);
+      font-family: Lato, sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 8px 18px;
+    }
+    .item {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 12px 16px;
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .item:first-child { border-top: 0; }
+    .clock {
+      color: var(--purple);
+      font-family: Lato, "Noto Sans TC", sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0;
+      line-height: 1.4;
+    }
+    .title {
+      font-size: 17px;
+      font-weight: 500; /* 關鍵：中文標題不用 bold */
+      margin: 0 0 6px;
+      letter-spacing: 0.02em;
+      color: #fff;
+    }
+    .artist {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 8px;
+      font-weight: 300;
+    }
+    .where {
+      font-size: 14px;
+      color: #e8e1f4;
+      margin: 0 0 6px;
+      font-weight: 400;
+    }
+    .where a, .links a {
+      color: #b89ae0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      font-family: Lato, sans-serif;
+      letter-spacing: 0.08em;
+      border: 1px solid var(--purple);
+      color: var(--purple);
+      border-radius: 999px;
+      padding: 3px 9px;
+      margin-right: 8px;
+      vertical-align: middle;
+      line-height: 1.2;
+    }
+    .footer {
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .footer a { color: #b89ae0; }
+    @media (max-width: 640px) {
+      .item { grid-template-columns: 1fr; gap: 6px; }
+      .map-frame { min-height: 300px; aspect-ratio: 3 / 4; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">PERSONAL ITINERARY · NOT OFFICIAL</p>
+    <h1>NIGHT KA SHI</h1>
+    <p class="subtitle">2026 臺北白晝之夜個人行程：傍晚晴光逛吃 → 花博晚上場 Block Party → 法國館與光電獸。本頁需以 https 開啟，Google 地圖 embed 才能正常顯示。</p>
+
+    <div class="meta">
+      <span class="pill"><strong>DATE</strong> 10/31（六）14:00 – 11/1（日）02:00</span>
+      <span class="pill"><strong>ANCHOR</strong> Block Party 19:00–20:30</span>
+      <span class="pill"><strong>ROUTE</strong> 晴光 → 大同大學 → 花博 → 舊兒童樂園</span>
+    </div>
+
+    <div class="note">
+      場次來源：<a href="https://www.nuitblanche.taipei/programme.html" target="_blank" rel="noopener">官方 PROGRAMME</a>。
+      下方地圖與官網首頁「藝術作品地圖」同一份 My Maps。
+      若在本機用檔案開啟（file://）地圖會空白，請用本頁的 https 連結或直接開 Google 地圖。
+    </div>
+
+    <div class="map-block">
+      <h2>官方藝術作品地圖</h2>
+      <p class="map-caption">來源：nuitblanche.taipei 首頁 embed</p>
+      <div class="map-actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/d/u/0/viewer?mid=1QJjbqDKIv-ABYr3TGoha6Nv2sx6Tzts" target="_blank" rel="noopener">在 Google 地圖開啟</a>
+        <a class="btn" href="https://www.nuitblanche.taipei/" target="_blank" rel="noopener">官方網站</a>
+      </div>
+      <div class="map-frame">
+        <iframe
+          title="2026 白晝之夜官方藝術作品地圖"
+          src="https://www.google.com/maps/d/embed?mid=1QJjbqDKIv-ABYr3TGoha6Nv2sx6Tzts&amp;ehbc=2E312F&amp;noprof=1"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-head">
+        <span class="time-tag">PHASE 01</span>
+        <h2>晴光商圈 · 逛吃</h2>
+      </div>
+      <div class="card">
+        <div class="item">
+          <div class="clock">16:30<br>–18:20</div>
+          <div>
+            <p class="title"><span class="badge">MUST</span>姚瑞中《巨神在哪裡？》</p>
+            <p class="artist">視覺裝置｜猜燈謎互動</p>
+            <p class="where">地點：雙城公園旁 <a href="https://maps.google.com/?q=%E6%99%AF%E7%A6%8F%E5%AE%AE%20%E8%87%BA%E5%8C%97" target="_blank" rel="noopener">景福宮</a></p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="clock">順路</div>
+          <div>
+            <p class="title"><span class="badge">MUST</span>張騰遠《鸚鵡模仿術－數綿羊》</p>
+            <p class="artist">大型街區裝置｜鸚鵡人系列</p>
+            <p class="where">地點：<a href="https://maps.google.com/?q=%E6%99%B4%E5%85%89%E5%95%86%E5%9C%88" target="_blank" rel="noopener">晴光商圈</a>巷弄</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="clock">順路</div>
+          <div>
+            <p class="title">晴光市場周邊作品</p>
+            <p class="artist">張軒銘《舊情綿綿》· 陳柏瑜《夜八仙醉扶登樓》等</p>
+            <p class="where">地點：晴光市場／周邊店家（夜市較早收，傍晚先吃完）</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="clock">17:30<br>–18:20</div>
+          <div>
+            <p class="title">晚餐 · 晴光夜市</p>
+            <p class="artist">邊逛邊吃，預留走路／捷運到花博的緩衝</p>
+            <p class="where">接著往大同大學或直接捷運往圓山</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="time-tag">PHASE 02</span>
+        <h2>大同大學 · 磁帶音樂</h2>
+      </div>
+      <div class="card">
+        <div class="item">
+          <div class="clock">18:30<br>–18:50</div>
+          <div>
+            <p class="title"><span class="badge">MUST</span>林其蔚《磁帶音樂》</p>
+            <p class="artist">聲音現場｜每場約 20 分鐘</p>
+            <p class="where">地點：大同大學 尚志教育研究館（地圖 13）</p>
+            <p class="where">可選場次：17:10／20:20／21:40…（19:00 會撞 Block Party）</p>
+            <p class="where links"><a href="https://www.nuitblanche.taipei/programme.html" target="_blank" rel="noopener">官方場次表</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="time-tag">PHASE 03</span>
+        <h2>花博圓山 · 晚上場</h2>
+      </div>
+      <div class="card">
+        <div class="item">
+          <div class="clock">18:50<br>–19:00</div>
+          <div>
+            <p class="title">移動到長廊舞台</p>
+            <p class="artist">可順路看蕭筑方《鬆弛的靈魂》（玉門街側）</p>
+            <p class="where">地點：花博圓山園區 · 環形廣場旁</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="clock">19:00<br>–20:30</div>
+          <div>
+            <p class="title"><span class="badge">ANCHOR</span>Jann Gallois《Block Party》</p>
+            <p class="artist">法國編舞｜群眾互動｜約 90 分鐘</p>
+            <p class="where">地點：B 長廊舞台（Plaza Stage）· 晚上場</p>
+            <p class="where">客座策展：Valérie Senghor／巴黎 104 藝術中心</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="clock">20:35<br>–21:20</div>
+          <div>
+            <p class="title"><span class="badge">MUST</span>Stéphane Thidet《Tree and Sand》</p>
+            <p class="artist">大型裝置＋錄像《Soleils》《Souffle》</p>
+            <p class="where">地點：花博流行館／遠東環生方舟（法國館）</p>
+            <p class="where links"><a href="https://www.nuitblanche.taipei/art-project/artist-stephanethidet.html" target="_blank" rel="noopener">作品頁</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="time-tag">PHASE 04</span>
+        <h2>舊兒童樂園 · 聲光收尾</h2>
+      </div>
+      <div class="card">
+        <div class="item">
+          <div class="clock">21:30<br>–23:00</div>
+          <div>
+            <p class="title"><span class="badge">MUST</span>姚仲涵《光電獸#51－午夜音樂盒》</p>
+            <p class="artist">聲光互動｜全聯贊助系列</p>
+            <p class="where">地點：圓山自然景觀公園 · 舊兒童樂園旋轉木馬</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="clock">同區</div>
+          <div>
+            <p class="title">廖建忠《運轉生活的終點站 4.0『L-oops』》</p>
+            <p class="artist">廢棄家電巨型摩天輪</p>
+            <p class="where">地點：圓山自然景觀公園</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="clock">同區</div>
+          <div>
+            <p class="title">王仲堃《迴旋曲 2026》</p>
+            <p class="artist">機械／動力裝置</p>
+            <p class="where">地點：圓山自然景觀公園</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="time-tag">TRANSIT</span>
+        <h2>移動建議</h2>
+      </div>
+      <div class="card">
+        <div class="item">
+          <div class="clock">下午</div>
+          <div>
+            <p class="title">捷運中和新蘆線 · 中山國小站</p>
+            <p class="where">走路進晴光商圈／景福宮</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="clock">傍晚</div>
+          <div>
+            <p class="title">往花博／圓山</p>
+            <p class="where">走路經大同大學，或捷運轉淡水信義線圓山站</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="clock">收工</div>
+          <div>
+            <p class="title">回程</p>
+            <p class="where">優先從圓山站進站；延長營運至 11/1 02:00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer">
+      本頁為個人行程整理，非官方活動頁。<br>
+      官方網站：<a href="https://www.nuitblanche.taipei/" target="_blank" rel="noopener">https://www.nuitblanche.taipei/</a>
+    </p>
+  </div>
+</body>
+</html>
