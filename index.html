@@ -220,6 +220,31 @@
       text-decoration: underline;
       text-underline-offset: 3px;
     }
+
+    .map-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.9em;
+      height: 1.9em;
+      padding: 0 8px;
+      margin-right: 8px;
+      border-radius: 999px;
+      background: var(--purple);
+      color: #000;
+      font-family: Lato, "Noto Sans TC", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .map-num.stage {
+      background: transparent;
+      border: 1px solid var(--purple);
+      color: var(--purple);
+    }
+
     .badge {
       display: inline-block;
       font-size: 11px;
@@ -268,7 +293,7 @@
 
     <div class="map-block">
       <h2>官方藝術作品地圖</h2>
-      <p class="map-caption">來源：nuitblanche.taipei 首頁 embed</p>
+      <p class="map-caption">來源：nuitblanche.taipei 首頁 embed<br>編號對照官方導覽地圖一覽（nuitblanche.taipei/images/web-map-list.jpg）：紫圈為視覺作品號；舞台 B＝長廊舞台。</p>
       <div class="map-actions">
         <a class="btn btn-primary" href="https://www.google.com/maps/d/u/0/viewer?mid=1QJjbqDKIv-ABYr3TGoha6Nv2sx6Tzts" target="_blank" rel="noopener">在 Google 地圖開啟</a>
         <a class="btn" href="https://www.nuitblanche.taipei/" target="_blank" rel="noopener">官方網站</a>
@@ -292,7 +317,7 @@
         <div class="item">
           <div class="clock">16:30<br>–18:20</div>
           <div>
-            <p class="title"><span class="badge">MUST</span>姚瑞中《巨神在哪裡？》</p>
+            <p class="title"><span class="badge">MUST</span><span class="map-num">17</span>姚瑞中《巨神在哪裡？》</p>
             <p class="artist">視覺裝置｜猜燈謎互動</p>
             <p class="where">地點：雙城公園旁 <a href="https://maps.google.com/?q=%E6%99%AF%E7%A6%8F%E5%AE%AE%20%E8%87%BA%E5%8C%97" target="_blank" rel="noopener">景福宮</a></p>
           </div>
@@ -300,7 +325,7 @@
         <div class="item">
           <div class="clock">順路</div>
           <div>
-            <p class="title"><span class="badge">MUST</span>張騰遠《鸚鵡模仿術－數綿羊》</p>
+            <p class="title"><span class="badge">MUST</span><span class="map-num">26</span>張騰遠《鸚鵡模仿術－數綿羊》</p>
             <p class="artist">大型街區裝置｜鸚鵡人系列</p>
             <p class="where">地點：<a href="https://maps.google.com/?q=%E6%99%B4%E5%85%89%E5%95%86%E5%9C%88" target="_blank" rel="noopener">晴光商圈</a>巷弄</p>
           </div>
@@ -308,8 +333,8 @@
         <div class="item">
           <div class="clock">順路</div>
           <div>
-            <p class="title">晴光市場周邊作品</p>
-            <p class="artist">張軒銘《舊情綿綿》· 陳柏瑜《夜八仙醉扶登樓》等</p>
+            <p class="title"><span class="map-num">28</span><span class="map-num">30</span>晴光市場周邊作品</p>
+            <p class="artist">陳柏瑜《夜八仙醉扶登樓》（28）· 張軒銘《舊情綿綿》（30）等</p>
             <p class="where">地點：晴光市場／周邊店家（夜市較早收，傍晚先吃完）</p>
           </div>
         </div>
@@ -333,9 +358,9 @@
         <div class="item">
           <div class="clock">18:30<br>–18:50</div>
           <div>
-            <p class="title"><span class="badge">MUST</span>林其蔚《磁帶音樂》</p>
+            <p class="title"><span class="badge">MUST</span><span class="map-num">13</span>林其蔚《磁帶音樂》</p>
             <p class="artist">聲音現場｜每場約 20 分鐘</p>
-            <p class="where">地點：大同大學 尚志教育研究館（地圖 13）</p>
+            <p class="where">地點：大同大學 尚志教育研究館（官方地圖 <strong>13</strong>）</p>
             <p class="where">可選場次：17:10／20:20／21:40…（19:00 會撞 Block Party）</p>
             <p class="where links"><a href="https://www.nuitblanche.taipei/programme.html" target="_blank" rel="noopener">官方場次表</a></p>
           </div>
@@ -353,23 +378,23 @@
           <div class="clock">18:50<br>–19:00</div>
           <div>
             <p class="title">移動到長廊舞台</p>
-            <p class="artist">可順路看蕭筑方《鬆弛的靈魂》（玉門街側）</p>
+            <p class="artist">可順路看 <span class="map-num">06</span>蕭筑方《鬆弛的靈魂》（玉門街側）</p>
             <p class="where">地點：花博圓山園區 · 環形廣場旁</p>
           </div>
         </div>
         <div class="item">
           <div class="clock">19:00<br>–20:30</div>
           <div>
-            <p class="title"><span class="badge">ANCHOR</span>Jann Gallois《Block Party》</p>
+            <p class="title"><span class="badge">ANCHOR</span><span class="map-num stage">B</span>Jann Gallois《Block Party》</p>
             <p class="artist">法國編舞｜群眾互動｜約 90 分鐘</p>
-            <p class="where">地點：B 長廊舞台（Plaza Stage）· 晚上場</p>
+            <p class="where">地點：官方地圖舞台 <strong>B</strong> · 長廊舞台（Plaza Stage）· 晚上場</p>
             <p class="where">客座策展：Valérie Senghor／巴黎 104 藝術中心</p>
           </div>
         </div>
         <div class="item">
           <div class="clock">20:35<br>–21:20</div>
           <div>
-            <p class="title"><span class="badge">MUST</span>Stéphane Thidet《Tree and Sand》</p>
+            <p class="title"><span class="badge">MUST</span><span class="map-num">08</span>Stéphane Thidet《Tree and Sand》</p>
             <p class="artist">大型裝置＋錄像《Soleils》《Souffle》</p>
             <p class="where">地點：花博流行館／遠東環生方舟（法國館）</p>
             <p class="where links"><a href="https://www.nuitblanche.taipei/art-project/artist-stephanethidet.html" target="_blank" rel="noopener">作品頁</a></p>
@@ -387,7 +412,7 @@
         <div class="item">
           <div class="clock">21:30<br>–23:00</div>
           <div>
-            <p class="title"><span class="badge">MUST</span>姚仲涵《光電獸#51－午夜音樂盒》</p>
+            <p class="title"><span class="badge">MUST</span><span class="map-num">05</span>姚仲涵《光電獸#51－午夜音樂盒》</p>
             <p class="artist">聲光互動｜全聯贊助系列</p>
             <p class="where">地點：圓山自然景觀公園 · 舊兒童樂園旋轉木馬</p>
           </div>
@@ -395,7 +420,7 @@
         <div class="item">
           <div class="clock">同區</div>
           <div>
-            <p class="title">廖建忠《運轉生活的終點站 4.0『L-oops』》</p>
+            <p class="title"><span class="map-num">01</span>廖建忠《運轉生活的終點站 4.0『L-oops』》</p>
             <p class="artist">廢棄家電巨型摩天輪</p>
             <p class="where">地點：圓山自然景觀公園</p>
           </div>
@@ -403,7 +428,7 @@
         <div class="item">
           <div class="clock">同區</div>
           <div>
-            <p class="title">王仲堃《迴旋曲 2026》</p>
+            <p class="title"><span class="map-num">03</span>王仲堃《迴旋曲 2026》</p>
             <p class="artist">機械／動力裝置</p>
             <p class="where">地點：圓山自然景觀公園</p>
           </div>
